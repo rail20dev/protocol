@@ -1,0 +1,10 @@
+# Editors
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Local notes
+NOTES.md
+notes/
+TODO.md
