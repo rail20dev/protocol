@@ -2,11 +2,11 @@
 
 **Zero-knowledge private payments on Base.**
 
-RAIL20 is a zero-knowledge privacy layer for ERC-20 tokens on Base. Users shield tokens into a shared anonymity pool, transact privately using PLONK zero-knowledge proofs, and unshield back to a public address whenever they want.
+RAIL20 is a zero-knowledge privacy layer for ERC-20 tokens on Base. Users shield tokens into a shared anonymity pool, transact privately using Groth16 zero-knowledge proofs, and unshield back to a public address whenever they want.
 
 - **Live on Base mainnet.** Contracts deployed and operational.
 - **Privacy by default, transparency on demand.** Users keep selective-disclosure keys and can prove non-association with sanctioned addresses.
-- **Built on audited primitives.** PLONK / BN254 / Poseidon — all standard, no novel cryptography.
+- **Built on audited primitives.** Groth16 / BN254 / Poseidon — all standard, no novel cryptography.
 
 ## Quick Links
 
@@ -43,7 +43,7 @@ Every step is gated by a zk proof that the user generates locally. Nothing leave
 ## Status
 
 - Mainnet: live
-- Audits: external review pending; RAIL20 is built on standard audited primitives for ZK verification (PLONK), Poseidon hashing, and the Merkle commitment tree over BN254
+- Audits: external review pending; RAIL20 is built on standard audited primitives for ZK verification (Groth16), Poseidon hashing, and the Merkle commitment tree over BN254
 - Bug bounty: contact via Twitter DM
 
 ## License

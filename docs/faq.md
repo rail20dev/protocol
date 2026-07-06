@@ -6,7 +6,7 @@ A zero-knowledge privacy layer for ERC-20 tokens on Base. Shield tokens into a p
 
 ## How is privacy achieved?
 
-Every transaction is gated by a PLONK zero-knowledge proof generated locally in your browser. The on-chain record contains only commitments and nullifiers — no amounts, no addresses, no balances. Observers can't link who sent what to whom.
+Every transaction is gated by a Groth16 zero-knowledge proof generated locally in your browser. The on-chain record contains only commitments and nullifiers — no amounts, no addresses, no balances. Observers can't link who sent what to whom.
 
 ## Is this a mixer?
 
@@ -32,7 +32,7 @@ Base mainnet (chain ID 8453).
 
 ## Is the code audited?
 
-RAIL20 builds on well-established, audited cryptographic primitives — PLONK proof verification, Poseidon hashing, and a Merkle-tree commitment scheme over the BN254 curve. These are industry-standard building blocks with no novel cryptography. A dedicated external audit of the RAIL20 contracts is pending.
+RAIL20 builds on well-established, audited cryptographic primitives — Groth16 proof verification, Poseidon hashing, and a Merkle-tree commitment scheme over the BN254 curve. These are industry-standard building blocks with no novel cryptography. A dedicated external audit of the RAIL20 contracts is pending.
 
 ## How do I integrate RAIL20?
 
