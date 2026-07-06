@@ -15,7 +15,7 @@ RAIL20 is a zero-knowledge privacy layer for ERC-20 tokens on Base. Users shield
 | App | https://app.rail20.org |
 | Docs site | https://docs.rail20.org |
 | Twitter | https://x.com/railB20 |
-| Verified contracts | [Basescan](https://basescan.org/address/0x1a9635E123a3fc7180701505630435BC83D1197B) |
+| Verified contracts | [Basescan](https://basescan.org/address/0x764FF96EabEeF2b197f845dD8D39441Ac68FDE11) |
 
 ## What's in this Repo
 
@@ -32,12 +32,13 @@ docs/
 
 ## How RAIL20 Works (60-second version)
 
-1. **Shield** — deposit an ERC-20 into the vault. Receive a private note only you can spend.
+1. **Shield** — deposit an ERC-20 into its token pool. Receive a private note only you can spend.
 2. **Send privately** — transfer notes between shielded addresses with sender, recipient, and amount hidden.
-3. **Swap privately** — trade between tokens inside the shielded set via aggregated routing.
-4. **Unshield** — withdraw to any public address. Use a fresh address to break linkability.
+3. **Swap privately** — swap ETH into private USDC (or vice versa) through a one-time burner wallet and a cross-chain solver network; the output is re-shielded so it stays private.
+4. **Bridge privately** — send value from your private balance to a recipient on another chain (Base, Arbitrum, BNB Chain).
+5. **Unshield** — withdraw to any public address. Use a fresh address to break linkability.
 
-Every step is gated by a PLONK proof that the user generates locally. Nothing leaves the browser unencrypted, and the on-chain record reveals only commitments and nullifiers — no balances, no recipients, no amounts.
+Every step is gated by a zk proof that the user generates locally. Nothing leaves the browser unencrypted, and the on-chain record reveals only commitments and nullifiers — no balances, no recipients, no amounts.
 
 ## Status
 

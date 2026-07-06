@@ -20,7 +20,7 @@ Your shielded funds become unrecoverable — that's the nature of self-custodied
 
 ## Do I need ETH for gas?
 
-Not necessarily. You can submit through a broadcaster — a relayer that pays the ETH gas and charges a small markup in the token you're transacting. This also breaks the link between your wallet and the transaction.
+Not necessarily. You can submit through the relayer that pays the ETH gas and charges a small markup in the token you're transacting. This also breaks the link between your wallet and the transaction.
 
 ## What tokens are supported?
 
