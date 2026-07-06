@@ -7,7 +7,7 @@ Deployed on **Base mainnet** (chain ID 8453). All contracts are verified on Base
 | Contract | Address | Purpose |
 |---|---|---|
 | RAIL20Vault | [`0x1a9635E123a3fc7180701505630435BC83D1197B`](https://basescan.org/address/0x1a9635E123a3fc7180701505630435BC83D1197B) | Core vault — Poseidon Merkle tree (depth 16), proof verification, token custody |
-| PrivateSwapRouter | [`0x38719d65CEEd54D8a1421C5EC0FB7bb19e33B3E2`](https://basescan.org/address/0x38719d65CEEd54D8a1421C5EC0FB7bb19e33B3E2) | Aggregated private swaps via DEX routing |
+| PrivateSwapRouter | [`0x38719d65CEEd54D8a1421C5EC0FB7bb19e33B3E2`](https://basescan.org/address/0x38719d65CEEd54D8a1421C5EC0FB7bb19e33B3E2) | Aggregated private swaps via on-chain routing |
 
 Full contract source is verifiable on Basescan. Click the links above to inspect the verified code, read storage, and interact.
 

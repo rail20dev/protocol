@@ -32,7 +32,7 @@ Base mainnet (chain ID 8453).
 
 ## Is the code audited?
 
-RAIL20 builds on audited primitives — PLONK verification, Poseidon hashing, and the Merkle commitment design from Railgun's audited stack. A dedicated external audit of the RAIL20 wrapper contracts is pending.
+RAIL20 builds on well-established, audited cryptographic primitives — PLONK proof verification, Poseidon hashing, and a Merkle-tree commitment scheme over the BN254 curve. These are industry-standard building blocks with no novel cryptography. A dedicated external audit of the RAIL20 contracts is pending.
 
 ## How do I integrate RAIL20?
 

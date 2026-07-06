@@ -30,7 +30,7 @@ For protocols that want to offer private trading:
 ```
 1. User shields tokens into RAIL20 Vault
 2. User requests a private swap (token A → token B)
-3. PrivateSwapRouter atomically: unshield → DEX swap → re-shield
+3. PrivateSwapRouter atomically: unshield → swap → re-shield
 4. User receives shielded token B — no public trace of the trade
 ```
 

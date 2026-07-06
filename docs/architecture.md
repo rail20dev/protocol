@@ -8,7 +8,7 @@ Technical overview of RAIL20's components, ZK circuit, and data flow.
 |---|---|
 | **RAIL20Vault** | Core contract. Holds shielded tokens, manages Poseidon Merkle tree, verifies ZK proofs, tracks spent nullifiers. |
 | **PlonkVerifier** | On-chain PLONK verifier (BN254). Validates ZK proofs submitted to the Vault. |
-| **PrivateSwapRouter** | Aggregated private swaps: unshield → swap via DEX → re-shield in one atomic tx. |
+| **PrivateSwapRouter** | Aggregated private swaps: unshield → swap → re-shield in one atomic tx. |
 | **UsernameRegistry** | Maps `.rail20` names to shielded addresses for human-readable recipients. |
 | **Broadcaster** | Off-chain relayer network. Submits proofs on behalf of users so their EOA is never linked to shielded activity. |
 

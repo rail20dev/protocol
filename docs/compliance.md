@@ -2,7 +2,7 @@
 
 RAIL20's design follows a single principle: **privacy by default, transparency on demand.**
 
-Privacy tools should protect honest users without becoming a haven for illicit funds. RAIL20 inherits Railgun's compliance model, which has operated without enforcement action since 2022.
+Privacy tools should protect honest users without becoming a haven for illicit funds. RAIL20 pairs a shielded pool with a selective-disclosure model: users hold viewing keys that let them prove — to a counterparty, auditor, or regulator — exactly what they choose, including non-association with sanctioned addresses, without deanonymizing the rest of their activity.
 
 ## Private Proofs of Innocence (POI)
 
