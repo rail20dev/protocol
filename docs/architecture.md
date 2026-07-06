@@ -18,20 +18,22 @@ RAIL20 is built from small, single-purpose contracts rather than one monolithic 
 ```
 User (browser)
   │
-  ├── 1. Generate zk proof locally (WASM prover)
+  ├── 1. Sign the RAIL20 message (derives account keys locally)
+  ├── 2. POST { signature, pool, amount, recipient } to the relayer
   ▼
-Relayer
+Relayer (api.rail20.org)
   │
-  ├── 2. Validate proof structure + nullifier freshness
-  ├── 3. Submit tx to Base (relayer pays gas)
+  ├── 3. Derive keys from signature, scan pool for the user's notes
+  ├── 4. Build the zk-SNARK proof (2 inputs, 2 outputs)
+  ├── 5. Submit tx to Base (relayer pays gas)
   ▼
 Token Pool (on-chain)
   │
-  ├── 4. Verify zk proof via the Verifier
-  ├── 5. Check nullifiers not already spent
-  ├── 6. Mark nullifiers as spent
-  ├── 7. Insert new commitment(s) into the Merkle tree
-  └── 8. Move tokens (shield / unshield)
+  ├── 6. Verify zk proof via the Verifier
+  ├── 7. Check nullifiers not already spent
+  ├── 8. Mark nullifiers as spent
+  ├── 9. Insert new commitment(s) into the Merkle tree
+  └── 10. Move tokens (shield / unshield)
 ```
 
 ## Shielded Transaction Model
@@ -62,7 +64,7 @@ An append-only Poseidon Merkle tree stores note commitments; a nullifier set mar
 
 ```
 commitment    = Poseidon(amount, pubkey, blinding, mintAddress)
-nullifier     = Poseidon(commitment, index, signature)  // signature = sign(commitment, index)
+nullifier     = Poseidon(commitment, merklePath, signature)  // signature = Poseidon(privKey, commitment, merklePath)
 ```
 
 ## Swap & Bridge
@@ -78,4 +80,4 @@ Swap and bridge are handled in the app, not by an on-chain swap router:
 - **Poseidon collision resistance** - no known collisions in the field.
 - **Append-only nullifier set** - prevents double-spend without revealing the consumed note.
 - **Non-custodial relayer** - the relayer never holds user funds or keys; it only broadcasts pre-proven transactions.
-- **Client-side proof generation** - secrets never leave the user's browser. The burner-wallet key used for swaps is derived from the user's signature and also stays in the browser.
+- **Relayer-side proving** - the relayer builds proofs from the user's signature, so it can see the note amounts and recipients it relays; it cannot move funds without the signature, and on-chain observers still learn nothing. Self-hosting a relayer removes this trust.

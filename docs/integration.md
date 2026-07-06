@@ -19,7 +19,7 @@ For autonomous agents that need private token management:
 ```
 1. Agent receives funds to its public EOA
 2. Agent deposits into the token pool → funds enter the privacy pool as notes
-3. Agent generates zk proofs locally for internal transfers
+3. Agent signs; the relayer builds zk proofs and broadcasts internal transfers
 4. Agent withdraws to a fresh address when spending publicly
 ```
 

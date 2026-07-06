@@ -6,7 +6,7 @@ A zero-knowledge privacy layer for ERC-20 tokens on Base. Shield tokens into a p
 
 ## How is privacy achieved?
 
-Every transaction is gated by a Groth16 zero-knowledge proof generated locally in your browser. The on-chain record contains only commitments and nullifiers - no amounts, no addresses, no balances. Observers can't link who sent what to whom.
+Every transaction is gated by a Groth16 zero-knowledge proof built by the relayer from your signature. The on-chain record contains only commitments and nullifiers - no amounts, no addresses, no balances. Observers can't link who sent what to whom.
 
 ## Is this a mixer?
 

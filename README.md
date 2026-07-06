@@ -40,7 +40,7 @@ docs/
 4. **Bridge privately** - send value from your private balance to a recipient on another chain (Base, Arbitrum, BNB Chain).
 5. **Unshield** - withdraw to any public address. Use a fresh address to break linkability.
 
-Every step is gated by a zk proof that the user generates locally. Nothing leaves the browser unencrypted, and the on-chain record reveals only commitments and nullifiers - no balances, no recipients, no amounts.
+Every step is gated by a zk proof the relayer builds from the user's signature. Nothing leaves the browser unencrypted, and the on-chain record reveals only commitments and nullifiers - no balances, no recipients, no amounts.
 
 ## Status
 
