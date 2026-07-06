@@ -47,10 +47,13 @@ This two-output structure covers private send (both outputs internal), withdrawa
 
 | Parameter | Value |
 |---|---|
-| Proof system | zk-SNARK over a universal setup |
+| Proof system | Groth16 (zk-SNARK) |
+| Inputs per tx | 2 |
+| Outputs per tx | 2 (recipient + change) |
 | Hash function | Poseidon |
 | Curve | BN254 |
-| Outputs per tx | 2 (recipient + change) |
+| Merkle tree depth | 26 levels |
+| Note encryption | AES-256-GCM (key derived from wallet signature) |
 | Tree | Poseidon Merkle tree, append-only |
 
 ## Merkle Tree & Nullifiers
@@ -58,8 +61,8 @@ This two-output structure covers private send (both outputs internal), withdrawa
 An append-only Poseidon Merkle tree stores note commitments; a nullifier set marks spent notes without revealing which note was consumed.
 
 ```
-commitment    = Poseidon(pubkey, amount, blinding)
-nullifier     = Poseidon(commitment, merkleIndex, spendSignature)
+commitment    = Poseidon(amount, pubkey, blinding, mintAddress)
+nullifier     = Poseidon(commitment, index, signature)  // signature = sign(commitment, index)
 ```
 
 ## Swap & Bridge

@@ -2,7 +2,9 @@
 
 **Zero-knowledge private payments on Base.**
 
-RAIL20 is a zero-knowledge privacy layer for ERC-20 tokens on Base. Users shield tokens into a shared anonymity pool, transact privately using Groth16 zero-knowledge proofs, and unshield back to a public address whenever they want.
+RAIL20 is a zero-knowledge privacy layer for tokens on Base. Users shield tokens into a per-token anonymity pool, transact privately using Groth16 zero-knowledge proofs, and unshield back to a public address whenever they want.
+
+RAIL20 pools are ERC-20-compatible. Because [B20](https://docs.base.org/base-chain/specs/upgrades/beryl/b20) (Base's native token standard, part of the Beryl upgrade) is a superset of ERC-20, a B20 pool drops in with no contract change once B20 activates on Base mainnet. Live today: native ETH and USDC.
 
 - **Live on Base mainnet.** Contracts deployed and operational.
 - **Privacy by default, transparency on demand.** Users keep selective-disclosure keys and can prove non-association with sanctioned addresses.
