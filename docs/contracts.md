@@ -6,7 +6,7 @@ Deployed on **Base mainnet** (chain ID 8453). Each shielded pool is its own cont
 
 | Contract | Address | Purpose |
 |---|---|---|
-| ETH Pool | [`0x99205B045Fcf5ff2689ad6B038abF3dd35b79ddE`](https://basescan.org/address/0x99205B045Fcf5ff2689ad6B038abF3dd35b79ddE) | Shielded pool for native ETH — Poseidon Merkle tree, proof verification, note custody |
+| ETH Pool | [`0x99205B045Fcf5ff2689ad6B038abF3dd35b79ddE`](https://basescan.org/address/0x99205B045Fcf5ff2689ad6B038abF3dd35b79ddE) | Shielded pool for native ETH - Poseidon Merkle tree, proof verification, note custody |
 | USDC Pool | [`0x764FF96EabEeF2b197f845dD8D39441Ac68FDE11`](https://basescan.org/address/0x764FF96EabEeF2b197f845dD8D39441Ac68FDE11) | Shielded pool for USDC ([`0x8335…2913`](https://basescan.org/address/0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913)) |
 | Fee recipient | [`0xd962c7a67B74EEe8D418189f7917A18577A4775d`](https://basescan.org/address/0xd962c7a67B74EEe8D418189f7917A18577A4775d) | Collects protocol fees on withdrawals |
 

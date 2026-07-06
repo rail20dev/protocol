@@ -2,17 +2,17 @@
 
 RAIL20's design follows a single principle: **privacy by default, transparency on demand.**
 
-Privacy tools should protect honest users without becoming a haven for illicit funds. RAIL20 pairs a shielded pool with a selective-disclosure model: users hold viewing keys that let them prove — to a counterparty, auditor, or regulator — exactly what they choose, including non-association with sanctioned addresses, without deanonymizing the rest of their activity.
+Privacy tools should protect honest users without becoming a haven for illicit funds. RAIL20 pairs a shielded pool with a selective-disclosure model: users hold viewing keys that let them prove - to a counterparty, auditor, or regulator - exactly what they choose, including non-association with sanctioned addresses, without deanonymizing the rest of their activity.
 
 ## Private Proofs of Innocence (POI)
 
-Users can cryptographically prove that their shielded funds do **not** trace back to a known list of sanctioned or flagged addresses — without revealing their full transaction history.
+Users can cryptographically prove that their shielded funds do **not** trace back to a known list of sanctioned or flagged addresses - without revealing their full transaction history.
 
 This lets honest users demonstrate clean provenance while keeping their financial activity private. Funds that cannot produce a valid POI are isolated from the compliant set.
 
 ## Selective Disclosure
 
-Each user holds **view keys** that can reveal specific transactions to an authorized party — an auditor, a counterparty, a regulator — on a per-transaction, opt-in basis.
+Each user holds **view keys** that can reveal specific transactions to an authorized party - an auditor, a counterparty, a regulator - on a per-transaction, opt-in basis.
 
 - No master key exists that can decrypt all activity
 - Disclosure is initiated by the user, not imposed globally
@@ -35,4 +35,4 @@ The official RAIL20 front-end can screen addresses against sanctions lists befor
 
 ## Summary
 
-RAIL20 gives users real privacy for legitimate financial activity — treasury management, payroll, agent-to-agent payments, RWA settlement — while preserving the tools regulators and auditors need to verify compliance when legally required.
+RAIL20 gives users real privacy for legitimate financial activity - treasury management, payroll, agent-to-agent payments, RWA settlement - while preserving the tools regulators and auditors need to verify compliance when legally required.

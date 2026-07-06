@@ -6,7 +6,7 @@ A zero-knowledge privacy layer for ERC-20 tokens on Base. Shield tokens into a p
 
 ## How is privacy achieved?
 
-Every transaction is gated by a Groth16 zero-knowledge proof generated locally in your browser. The on-chain record contains only commitments and nullifiers — no amounts, no addresses, no balances. Observers can't link who sent what to whom.
+Every transaction is gated by a Groth16 zero-knowledge proof generated locally in your browser. The on-chain record contains only commitments and nullifiers - no amounts, no addresses, no balances. Observers can't link who sent what to whom.
 
 ## Is this a mixer?
 
@@ -14,7 +14,7 @@ No. RAIL20 uses a per-token commitment set with selective-disclosure view keys a
 
 ## What happens if I lose my note secret?
 
-Your shielded funds become unrecoverable — that's the nature of self-custodied privacy. RAIL20 persists your notes locally and offers an optional encrypted cloud backup (the encryption key is derived from your wallet signature, so only you can decrypt it). As long as you keep at least one device or backup synced, a device swap won't lose your notes.
+Your shielded funds become unrecoverable - that's the nature of self-custodied privacy. RAIL20 persists your notes locally and offers an optional encrypted cloud backup (the encryption key is derived from your wallet signature, so only you can decrypt it). As long as you keep at least one device or backup synced, a device swap won't lose your notes.
 
 **Always keep at least one synced backup.**
 
@@ -32,7 +32,7 @@ Base mainnet (chain ID 8453).
 
 ## Is the code audited?
 
-RAIL20 builds on well-established, audited cryptographic primitives — Groth16 proof verification, Poseidon hashing, and a Merkle-tree commitment scheme over the BN254 curve. These are industry-standard building blocks with no novel cryptography. A dedicated external audit of the RAIL20 contracts is pending.
+RAIL20 builds on well-established, audited cryptographic primitives - Groth16 proof verification, Poseidon hashing, and a Merkle-tree commitment scheme over the BN254 curve. These are industry-standard building blocks with no novel cryptography. A dedicated external audit of the RAIL20 contracts is pending.
 
 ## How do I integrate RAIL20?
 

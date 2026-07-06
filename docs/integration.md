@@ -6,9 +6,9 @@ How to integrate RAIL20 privacy primitives into your protocol, agent, or dApp.
 
 RAIL20 exposes three integration surfaces:
 
-1. **Direct contract calls** — shield / transact / unshield against a token pool contract
-2. **Relayer API** — submit proofs for relay so the user doesn't pay gas directly (`https://api.rail20.org`)
-3. **SDK (coming soon)** — high-level TypeScript wrapper for proof generation + submission
+1. **Direct contract calls** - shield / transact / unshield against a token pool contract
+2. **Relayer API** - submit proofs for relay so the user doesn't pay gas directly (`https://api.rail20.org`)
+3. **SDK (coming soon)** - high-level TypeScript wrapper for proof generation + submission
 
 Each supported asset has its own pool contract (see [Contracts](contracts.md)).
 
@@ -23,7 +23,7 @@ For autonomous agents that need private token management:
 4. Agent withdraws to a fresh address when spending publicly
 ```
 
-Each step breaks the on-chain link. An observer sees deposits into the pool and withdrawals from the pool — but cannot connect the two.
+Each step breaks the on-chain link. An observer sees deposits into the pool and withdrawals from the pool - but cannot connect the two.
 
 ## Integration Pattern: Private Swap & Bridge
 
@@ -52,7 +52,7 @@ There is no on-chain swap router: a neutral burner and an external solver networ
 | Relayer | Users don't need ETH for gas if using the relayer. Fee is a flat amount plus 0.35% in the transacted token. |
 | Finality | Base L2 finality (~2s block time). Proofs verify on-chain in the same block. |
 | Outputs per tx | Maximum of two (recipient + change). |
-| Cross-chain settle | Bridge/swap settlement takes ~1–6 min; poll intent status until confirmed. |
+| Cross-chain settle | Bridge/swap settlement takes ~1-6 min; poll intent status until confirmed. |
 | Token support | Each supported token has its own pool. Currently ETH and USDC on Base. |
 
 ## Selective Disclosure
@@ -61,7 +61,7 @@ Integrators can request proof of non-association (compliance):
 
 - Users hold view keys that reveal specific transactions to authorized parties
 - Private Proofs of Innocence (POI) demonstrate funds don't trace to sanctioned addresses
-- No bulk surveillance — disclosure is per-user, per-request, opt-in
+- No bulk surveillance - disclosure is per-user, per-request, opt-in
 
 ## Contact
 

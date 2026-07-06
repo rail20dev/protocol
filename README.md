@@ -6,7 +6,7 @@ RAIL20 is a zero-knowledge privacy layer for ERC-20 tokens on Base. Users shield
 
 - **Live on Base mainnet.** Contracts deployed and operational.
 - **Privacy by default, transparency on demand.** Users keep selective-disclosure keys and can prove non-association with sanctioned addresses.
-- **Built on audited primitives.** Groth16 / BN254 / Poseidon — all standard, no novel cryptography.
+- **Built on audited primitives.** Groth16 / BN254 / Poseidon - all standard, no novel cryptography.
 
 ## Quick Links
 
@@ -19,7 +19,7 @@ RAIL20 is a zero-knowledge privacy layer for ERC-20 tokens on Base. Users shield
 
 ## What's in this Repo
 
-Public technical reference and integration documentation. The implementation source — contracts, circuits, backend, frontend — is maintained privately while the protocol stabilizes.
+Public technical reference and integration documentation. The implementation source - contracts, circuits, backend, frontend - is maintained privately while the protocol stabilizes.
 
 ```
 docs/
@@ -32,13 +32,13 @@ docs/
 
 ## How RAIL20 Works (60-second version)
 
-1. **Shield** — deposit an ERC-20 into its token pool. Receive a private note only you can spend.
-2. **Send privately** — transfer notes between shielded addresses with sender, recipient, and amount hidden.
-3. **Swap privately** — swap ETH into private USDC (or vice versa) through a one-time burner wallet and a cross-chain solver network; the output is re-shielded so it stays private.
-4. **Bridge privately** — send value from your private balance to a recipient on another chain (Base, Arbitrum, BNB Chain).
-5. **Unshield** — withdraw to any public address. Use a fresh address to break linkability.
+1. **Shield** - deposit an ERC-20 into its token pool. Receive a private note only you can spend.
+2. **Send privately** - transfer notes between shielded addresses with sender, recipient, and amount hidden.
+3. **Swap privately** - swap ETH into private USDC (or vice versa) through a one-time burner wallet and a cross-chain solver network; the output is re-shielded so it stays private.
+4. **Bridge privately** - send value from your private balance to a recipient on another chain (Base, Arbitrum, BNB Chain).
+5. **Unshield** - withdraw to any public address. Use a fresh address to break linkability.
 
-Every step is gated by a zk proof that the user generates locally. Nothing leaves the browser unencrypted, and the on-chain record reveals only commitments and nullifiers — no balances, no recipients, no amounts.
+Every step is gated by a zk proof that the user generates locally. Nothing leaves the browser unencrypted, and the on-chain record reveals only commitments and nullifiers - no balances, no recipients, no amounts.
 
 ## Status
 
