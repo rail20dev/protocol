@@ -24,7 +24,7 @@ Not necessarily. You can submit through the relayer that pays the ETH gas and ch
 
 ## What tokens are supported?
 
-Currently USDC and WETH on Base. Additional ERC-20s can be enabled by governance.
+Currently ETH (native) and USDC on Base. Additional ERC-20s can be enabled by governance.
 
 ## Which networks?
 

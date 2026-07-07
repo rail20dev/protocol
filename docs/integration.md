@@ -30,10 +30,10 @@ Each step breaks the on-chain link. An observer sees deposits into the pool and 
 For protocols that want to offer private trading or cross-chain movement:
 
 ```
-Swap (stays private):
+Swap (same-chain, stays private):
 1. User holds a private balance in a pool
 2. A private withdrawal funds a one-time burner wallet
-3. The burner swaps via the cross-chain solver network
+3. The burner swaps on-chain via a DEX (Uniswap V3 on Base)
 4. The output is re-shielded back into the pool as private notes
 
 Bridge (private → any chain):
@@ -48,7 +48,7 @@ There is no on-chain swap router: a neutral burner and an external solver networ
 
 | Consideration | Detail |
 |---|---|
-| Proof generation | Client-side (WASM), a few seconds on modern hardware. |
+| Proof generation | Relayer-side from the user's signature (a few seconds). Self-hosting the relayer keeps proving fully in your control. |
 | Relayer | Users don't need ETH for gas if using the relayer. Fee is a flat amount plus 0.35% in the transacted token. |
 | Finality | Base L2 finality (~2s block time). Proofs verify on-chain in the same block. |
 | Outputs per tx | Maximum of two (recipient + change). |

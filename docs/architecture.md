@@ -71,8 +71,8 @@ nullifier     = Poseidon(commitment, merklePath, signature)  // signature = Pose
 
 Swap and bridge are handled in the app, not by an on-chain swap router:
 
-- **Swap to private** - a private withdrawal funds a one-time **burner wallet**, which swaps through the cross-chain solver network and re-shields the output back into the pool as fresh private notes. A neutral burner sits between the pool and the swap, so there is no on-chain link between the user's wallet and the swapped funds.
-- **Bridge** - a private withdrawal is routed to the solver's deposit address; the solver fulfills the intent cross-chain and delivers the output directly to the user's chosen recipient on the destination chain (Base, Arbitrum, BNB Chain).
+- **Swap to private** (same-chain, e.g. ETH ↔ USDC on Base) - a private withdrawal funds a one-time **burner wallet**, which swaps **on-chain via a DEX (Uniswap V3 on Base)** and re-shields the output back into the pool as fresh private notes. A neutral burner sits between the pool and the swap, so there is no on-chain link between the user's wallet and the swapped funds.
+- **Bridge** (cross-chain) - a private withdrawal is routed to a **cross-chain solver network (NEAR Intents / 1Click)** deposit address; the solver fulfills the intent and delivers the output directly to the user's chosen recipient on the destination chain (Base, Arbitrum, Ethereum, BNB Chain).
 
 ## Security Model
 
