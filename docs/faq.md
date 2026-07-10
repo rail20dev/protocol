@@ -2,7 +2,7 @@
 
 ## What is RAIL20?
 
-A zero-knowledge privacy layer for ERC-20 tokens on Base. Shield tokens into a private pool, transact without exposing balances or counterparties, and unshield to any public address.
+A zero-knowledge privacy layer for tokens on Base and Robinhood Chain. Shield tokens into a private pool, transact without exposing balances or counterparties, and unshield to any public address.
 
 ## How is privacy achieved?
 
@@ -24,11 +24,11 @@ Not necessarily. You can submit through the relayer that pays the ETH gas and ch
 
 ## What tokens are supported?
 
-Currently ETH (native) and USDC on Base. Additional ERC-20s can be enabled by governance.
+On Base: native **ETH** and **USDC**. On Robinhood Chain: native **ETH** and **USDG** (Global Dollar). Each token has its own pool; additional tokens can be enabled by governance.
 
 ## Which networks?
 
-Base mainnet (chain ID 8453).
+Base (chain ID 8453) and Robinhood Chain (chain ID 4663, an Arbitrum Orbit L2).
 
 ## Is the code audited?
 
@@ -40,4 +40,4 @@ See [integration.md](integration.md), or reach out via [@railB20](https://x.com/
 
 ## Where are the contracts?
 
-Deployed and verified on Base. See [contracts.md](contracts.md) for addresses and Basescan links.
+Deployed on Base and Robinhood Chain. See [contracts.md](contracts.md) for all addresses and explorer links.

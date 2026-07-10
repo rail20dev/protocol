@@ -30,10 +30,10 @@ Each step breaks the on-chain link. An observer sees deposits into the pool and 
 For protocols that want to offer private trading or cross-chain movement:
 
 ```
-Swap (same-chain, stays private):
+Same-chain swap (stays private):
 1. User holds a private balance in a pool
 2. A private withdrawal funds a one-time burner wallet
-3. The burner swaps on-chain via a DEX (Uniswap V3 on Base)
+3. The burner swaps on-chain via Uniswap V3 (one transaction, no solver wait)
 4. The output is re-shielded back into the pool as private notes
 
 Bridge (private → any chain):
@@ -53,7 +53,7 @@ There is no on-chain swap router: a neutral burner and an external solver networ
 | Finality | Base L2 finality (~2s block time). Proofs verify on-chain in the same block. |
 | Outputs per tx | Maximum of two (recipient + change). |
 | Cross-chain settle | Bridge/swap settlement takes ~1-6 min; poll intent status until confirmed. |
-| Token support | Each supported token has its own pool. Currently ETH and USDC on Base. |
+| Token support | Each supported token has its own pool per chain. Live: ETH + USDC on Base, ETH + USDG on Robinhood Chain. |
 
 ## Selective Disclosure
 

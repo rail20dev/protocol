@@ -1,12 +1,12 @@
 # RAIL20
 
-**Zero-knowledge private payments on Base.**
+**Zero-knowledge private payments on Base and Robinhood Chain.**
 
-RAIL20 is a zero-knowledge privacy layer for tokens on Base. Users shield tokens into a per-token anonymity pool, transact privately using Groth16 zero-knowledge proofs, and unshield back to a public address whenever they want.
+RAIL20 is a zero-knowledge privacy layer for tokens on Base (chain 8453) and Robinhood Chain (chain 4663, an Arbitrum Orbit L2). Users shield tokens into a per-token anonymity pool, transact privately using Groth16 zero-knowledge proofs, and unshield back to a public address whenever they want.
 
-RAIL20 pools are ERC-20-compatible. Because [B20](https://docs.base.org/base-chain/specs/upgrades/beryl/b20) (Base's native token standard, part of the Beryl upgrade) is a superset of ERC-20, a B20 pool drops in with no contract change once B20 activates on Base mainnet. Live today: native ETH and USDC.
+RAIL20 pools are ERC-20-compatible. Because [B20](https://docs.base.org/base-chain/specs/upgrades/beryl/b20) (Base's native token standard, part of the Beryl upgrade) is a superset of ERC-20, a B20 pool drops in with no contract change once B20 activates on Base mainnet. Live today: native ETH + USDC on Base, native ETH + USDG (Global Dollar) on Robinhood Chain.
 
-- **Live on Base mainnet.** Contracts deployed and operational.
+- **Live on Base and Robinhood Chain.** Contracts deployed and operational on both.
 - **Privacy by default, transparency on demand.** Users keep selective-disclosure keys and can prove non-association with sanctioned addresses.
 - **Built on audited primitives.** Groth16 / BN254 / Poseidon - all standard, no novel cryptography.
 
@@ -36,8 +36,8 @@ docs/
 
 1. **Shield** - deposit an ERC-20 into its token pool. Receive a private note only you can spend.
 2. **Send privately** - transfer notes between shielded addresses with sender, recipient, and amount hidden.
-3. **Swap privately** - swap ETH into private USDC (or vice versa) through a one-time burner wallet that swaps on-chain via a DEX (Uniswap V3 on Base); the output is re-shielded so it stays private.
-4. **Bridge privately** - send value from your private balance to a recipient on another chain via a cross-chain solver network (Base, Arbitrum, Ethereum, BNB Chain).
+3. **Swap privately** - swap ETH into the chain's private stablecoin (USDC on Base, USDG on Robinhood) or vice versa, through a one-time burner wallet and an on-chain DEX (Uniswap V3); the output is re-shielded so it stays private.
+4. **Bridge privately** - send value from your private balance to a recipient on another chain (Base &harr; Robinhood, plus Arbitrum, Ethereum, BNB Chain).
 5. **Unshield** - withdraw to any public address. Use a fresh address to break linkability.
 
 Every step is gated by a zk proof the relayer builds from the user's signature. Nothing leaves the browser unencrypted, and the on-chain record reveals only commitments and nullifiers - no balances, no recipients, no amounts.
