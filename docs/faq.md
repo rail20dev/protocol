@@ -12,11 +12,11 @@ Every transaction is gated by a Groth16 zero-knowledge proof built by the relaye
 
 No. RAIL20 uses a per-token commitment set with selective-disclosure view keys and Private Proofs of Innocence. Unlike mixers, each note retains a provable history that the owner can selectively disclose. See [compliance.md](compliance.md).
 
-## What happens if I lose my note secret?
+## What if I switch devices — do I lose my notes?
 
-Your shielded funds become unrecoverable - that's the nature of self-custodied privacy. RAIL20 persists your notes locally and offers an optional encrypted cloud backup (the encryption key is derived from your wallet signature, so only you can decrypt it). As long as you keep at least one device or backup synced, a device swap won't lose your notes.
+No. Your private balance is **reconstructed from on-chain events** using your wallet signature: account and note-encryption keys are derived deterministically from a single signed message, so any device that can produce that signature can rebuild your notes by scanning the pool. Nothing critical is stored only in one browser.
 
-**Always keep at least one synced backup.**
+The one thing you must keep is **access to the wallet key that produces the signature** — lose that and, like any self-custodied asset, the funds are unrecoverable. There is no server-side account and no master key.
 
 ## Do I need ETH for gas?
 

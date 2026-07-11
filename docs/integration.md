@@ -4,11 +4,12 @@ How to integrate RAIL20 privacy primitives into your protocol, agent, or dApp.
 
 ## Overview
 
-RAIL20 exposes three integration surfaces:
+RAIL20 exposes these integration surfaces:
 
-1. **Direct contract calls** - shield / transact / unshield against a token pool contract
-2. **Relayer API** - submit proofs for relay so the user doesn't pay gas directly (`https://api.rail20.org`)
-3. **SDK (coming soon)** - high-level TypeScript wrapper for proof generation + submission
+1. **CLI** (`@rail20/cli`, live on npm) - the fastest path. `npm i -g @rail20/cli`, then `rail20 deposit / send / swap / bridge / recover / balance`, with `--chain base|robinhood`. Ideal for agents and scripts.
+2. **Relayer API** - submit proofs for relay so the user doesn't pay gas directly (`https://api.rail20.org`). Use this to embed RAIL20 into an existing runtime.
+3. **Direct contract calls** - shield / transact / unshield against a token pool contract.
+4. **SDK (coming soon)** - high-level TypeScript wrapper for proof generation + submission.
 
 Each supported asset has its own pool contract (see [Contracts](contracts.md)).
 
@@ -37,12 +38,13 @@ Same-chain swap (stays private):
 4. The output is re-shielded back into the pool as private notes
 
 Bridge (private → any chain):
-1. A private withdrawal routes to the solver's deposit address
-2. The solver fulfills the intent cross-chain
+1. A private withdrawal funds a burner, which routes to a solver/router deposit address
+   (NEAR Intents 1Click for Arbitrum/Ethereum/BNB, or a direct Relay/Across router for Base ↔ Robinhood)
+2. The solver/router fulfills the intent cross-chain
 3. The output asset is delivered to the recipient on the destination chain
 ```
 
-There is no on-chain swap router: a neutral burner and an external solver network sit between the pool and the swap, so the trade has no public trace back to the user.
+A neutral burner and an external solver/router network sit between the pool and the swap, so the trade has no public trace back to the user.
 
 ## Key Integration Considerations
 

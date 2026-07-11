@@ -59,7 +59,7 @@ Each supported token has its own pool per chain. Currently live:
 
 ## Relayer & Fees
 
-Withdrawals and shielded transactions are broadcast by a **relayer** so users pay no gas and their own wallet never appears as the transaction sender. The fee is a flat component plus **0.35%** of the amount, paid to the fee recipient. Flat fee: `0.00025 ETH` (ETH pools) or `1` stablecoin unit (`1 USDC` on Base / `1 USDG` on Robinhood).
+Withdrawals and shielded transactions are broadcast by a **relayer** so users pay no gas and their own wallet never appears as the transaction sender. The fee is a flat component plus **0.35%** of the amount, paid to the fee recipient. Flat fee per pool: `0.00025 ETH` (Base ETH), `1 USDC` (Base USDC), `0.00002 ETH` (Robinhood ETH), `0.5 USDG` (Robinhood USDG). Deposits (shielding) pay no protocol fee.
 
 ## Verifying Contracts
 
