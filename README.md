@@ -4,7 +4,7 @@
 
 RAIL20 is a zero-knowledge privacy layer for tokens on Base (chain 8453) and Robinhood Chain (chain 4663, an Arbitrum Orbit L2). Users shield tokens into a per-token anonymity pool, transact privately using Groth16 zero-knowledge proofs, and unshield back to a public address whenever they want.
 
-RAIL20 pools are ERC-20-compatible. Because [B20](https://docs.base.org/base-chain/specs/upgrades/beryl/b20) (Base's native token standard, part of the Beryl upgrade) is a superset of ERC-20, a B20 pool drops in with no contract change once B20 activates on Base mainnet. Live today: native ETH + USDC on Base, native ETH + USDG (Global Dollar) on Robinhood Chain.
+RAIL20 pools are ERC-20-compatible, so adding a new pool - a different token, or the same design on a new EVM chain - is a configuration change (token address, decimals, symbol) with no contract, proof, or relayer changes. Live today: native ETH + USDC on Base, native ETH + USDG (Global Dollar) on Robinhood Chain.
 
 - **Live on Base and Robinhood Chain.** Contracts deployed and operational on both.
 - **Privacy by default, transparency on demand.** Users keep selective-disclosure keys and can prove non-association with sanctioned addresses.
