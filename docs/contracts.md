@@ -27,6 +27,25 @@ Deployed on **Base** (chain ID 8453) and **Robinhood Chain** (chain ID 4663, an 
 
 RAIL20 runs **one dedicated pool contract per token** rather than a single shared vault. Each pool holds only its own asset and maintains its own commitment tree, which keeps the anonymity set per-asset and the contract surface minimal.
 
+## Staking & Governance (Robinhood Chain 4663)
+
+The RAIL20 staking and governance system is a fork of the audited [Railgun governance contracts](https://github.com/Railgun-Privacy/contract) (identifiers renamed only; logic unchanged). Stakers lock $RAIL20 to earn a share of protocol fees paid in ETH and to gain voting power over on-chain governance.
+
+| Contract | Address | Purpose |
+|---|---|---|
+| $RAIL20 token | [`0xda917699d4C66941bE575fb53044E5df71bbe460`](https://robinhoodchain.blockscout.com/address/0xda917699d4C66941bE575fb53044E5df71bbe460) | Governance and staking token |
+| Staking | [`0x3149A3876DabFb98979818f81Cd17c6cdB3d0f67`](https://robinhoodchain.blockscout.com/address/0x3149A3876DabFb98979818f81Cd17c6cdB3d0f67) | Per-position stake with 30-day unlock cooldown, daily snapshots |
+| Voting | [`0xcE0dA52e0879F8Aa8347E2B800E638BF97d5e97d`](https://robinhoodchain.blockscout.com/address/0xcE0dA52e0879F8Aa8347E2B800E638BF97d5e97d) | Proposal lifecycle: create, sponsor, callVote, vote, execute |
+| Delegator | [`0x74C47d01D283A50a4349B20e8562a91505929b1A`](https://robinhoodchain.blockscout.com/address/0x74C47d01D283A50a4349B20e8562a91505929b1A) | Permissioned executor; owner is Voting |
+| Treasury (proxy) | [`0x16171E1c5E9a4461E4Ff4E16EC2AdE1cE60D9E74`](https://robinhoodchain.blockscout.com/address/0x16171E1c5E9a4461E4Ff4E16EC2AdE1cE60D9E74) | Holds protocol fees; admin is Delegator |
+| GovernorRewards (proxy) | [`0x8623e9a582A42B069005b7719B3eFdF7B65D0c61`](https://robinhoodchain.blockscout.com/address/0x8623e9a582A42B069005b7719B3eFdF7B65D0c61) | Distributes treasury funds to stakers by voting power |
+| ProxyAdmin | [`0xC612F631398551e2A35dF949E3CA137b7cD986e7`](https://robinhoodchain.blockscout.com/address/0xC612F631398551e2A35dF949E3CA137b7cD986e7) | Upgrade admin for Treasury and GovernorRewards; owner is Delegator |
+| Reward token (WETH) | [`0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73`](https://robinhoodchain.blockscout.com/address/0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73) | Rewards are distributed in WETH |
+
+**Governance parameters** (identical to upstream): sponsorship threshold `500,000` $RAIL20 within a 30-day window, voting quorum `2,000,000`, 30-day unlock cooldown, snapshot interval 1 day, reward distribution interval 14 days.
+
+**Ownership chain:** Treasury, ProxyAdmin, and GovernorRewards are all owned or admin-controlled by Delegator; Delegator is owned by Voting. All privileged actions execute only through passed governance proposals.
+
 ## Pool Interface (key functions)
 
 Each pool exposes a UTXO-style shielded-transaction interface. A single transaction spends input notes and creates up to **two** output notes (recipient + change).
