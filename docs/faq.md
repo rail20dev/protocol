@@ -36,8 +36,21 @@ RAIL20 builds on well-established, audited cryptographic primitives - Groth16 pr
 
 ## How do I integrate RAIL20?
 
-See [integration.md](integration.md), or reach out via [@railB20](https://x.com/railB20).
+See [integration.md](integration.md), or reach out via [@rail20](https://x.com/rail20).
 
 ## Where are the contracts?
 
 Deployed on Base and Robinhood Chain. See [contracts.md](contracts.md) for all addresses and explorer links.
+
+## Can I stake $RAIL20?
+
+Yes. Staking and governance are live on Robinhood Chain at [staking.rail20.org](https://staking.rail20.org). Stake $RAIL20 to earn a share of protocol fees paid in ETH and to gain voting power over on-chain governance. The staking and governance contracts are a fork of the audited Railgun governance system (identifiers renamed, logic unchanged). See the Staking & Governance section in [contracts.md](contracts.md#staking--governance-robinhood-chain-4663).
+
+## How are staking rewards paid?
+
+In ETH, not in more $RAIL20. Fees collected from private operations (send, swap, bridge) accrue to the protocol treasury and are distributed to stakers by voting-power share. There is no token emission and no burn, so the supply stays fixed and rewards track real protocol usage.
+
+## How does governance work?
+
+Any staker with voting power can submit a proposal. It must gather 500,000 $RAIL20 of sponsorship within 30 days to reach a vote, then pass a community vote (quorum 2,000,000, Yes over No). Passed proposals execute on-chain through the governance delegator. Unlocking a stake starts a 30-day cooldown before it can be claimed, which protects quorum from sudden withdrawals during open votes.
+

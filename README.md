@@ -9,14 +9,16 @@ RAIL20 pools are ERC-20-compatible, so adding a new pool - a different token, or
 - **Live on Base and Robinhood Chain.** Contracts deployed and operational on both.
 - **Privacy by default, transparency on demand.** Users keep selective-disclosure keys and can prove non-association with sanctioned addresses.
 - **Built on audited primitives.** Groth16 / BN254 / Poseidon - all standard, no novel cryptography.
+- **Staking and governance.** Stake $RAIL20 to earn a share of protocol fees (paid in ETH) and vote on protocol changes. Fork of the audited [Railgun governance contracts](https://github.com/Railgun-Privacy/contract) (identifiers renamed, logic unchanged).
 
 ## Quick Links
 
 | Resource | Where |
 |---|---|
 | App | https://app.rail20.org |
+| Staking dApp | https://staking.rail20.org |
 | Docs site | https://docs.rail20.org |
-| Twitter | https://x.com/railB20 |
+| Twitter | https://x.com/rail20 |
 | Verified contracts | [Basescan](https://basescan.org/address/0x764FF96EabEeF2b197f845dD8D39441Ac68FDE11) |
 
 ## What's in this Repo
@@ -41,6 +43,17 @@ docs/
 5. **Unshield** - withdraw to any public address. Use a fresh address to break linkability.
 
 Every step is gated by a zk proof the relayer builds from the user's signature. Nothing leaves the browser unencrypted, and the on-chain record reveals only commitments and nullifiers - no balances, no recipients, no amounts.
+
+## How Staking & Governance Works
+
+Staking and governance run on Robinhood Chain (4663), forked from the audited Railgun governance contracts with identifiers renamed and logic unchanged.
+
+1. **Stake** - lock $RAIL20 into individual stake positions. Each stake earns a share of protocol fees (paid in ETH) and grants voting power at each daily snapshot.
+2. **Earn** - fees collected from private operations (send, swap, bridge) accrue to the treasury and are distributed to stakers by voting-power share, in ETH. No token emission, no burn.
+3. **Govern** - stakers submit proposals, gather sponsorship (500,000 $RAIL20 within 30 days), then the community votes (quorum 2,000,000). Passed proposals execute on-chain through the governance delegator.
+4. **Unlock** - unlocking a stake starts a 30-day cooldown during which it stops earning and loses voting power; after cooldown you claim it back to your wallet.
+
+Ownership chain: Treasury, ProxyAdmin, and GovernorRewards are controlled by the Delegator, which is owned by the Voting contract, so every privileged action runs only through a passed governance proposal. Addresses are listed in [docs/contracts.md](docs/contracts.md#staking--governance-robinhood-chain-4663).
 
 ## Status
 
