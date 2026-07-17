@@ -9,7 +9,7 @@ RAIL20 pools are ERC-20-compatible, so adding a new pool - a different token, or
 - **Live on Base, Robinhood Chain, and Arbitrum.** Contracts deployed and operational on all three.
 - **Privacy by default, transparency on demand.** Users keep selective-disclosure keys and can prove non-association with sanctioned addresses.
 - **Built on audited primitives.** Groth16 / BN254 / Poseidon - all standard, no novel cryptography.
-- **Staking and governance.** Stake $RAIL20 to earn a share of protocol fees (paid in ETH) and vote on protocol changes. Fork of the audited [Railgun governance contracts](https://github.com/Railgun-Privacy/contract) (identifiers renamed, logic unchanged).
+- **Staking and governance.** Stake $RAIL20 to earn a share of protocol fees (paid in ETH) and vote on protocol changes.
 
 ## Quick Links
 
@@ -46,7 +46,7 @@ Every step is gated by a zk proof the relayer builds from the user's signature. 
 
 ## How Staking & Governance Works
 
-Staking and governance run on Robinhood Chain (4663), forked from the audited Railgun governance contracts with identifiers renamed and logic unchanged.
+Staking and governance run on Robinhood Chain (4663).
 
 1. **Stake** - lock $RAIL20 into individual stake positions. Each stake earns a share of protocol fees (paid in ETH) and grants voting power at each daily snapshot.
 2. **Earn** - fees collected from private operations (send, swap, bridge) accrue to the treasury and are distributed to stakers by voting-power share, in ETH. No token emission, no burn.

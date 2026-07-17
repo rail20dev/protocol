@@ -44,7 +44,7 @@ Deployed on Base, Robinhood Chain, and Arbitrum. See [contracts.md](contracts.md
 
 ## Can I stake $RAIL20?
 
-Yes. Staking and governance are live on Robinhood Chain at [staking.rail20.org](https://staking.rail20.org). Stake $RAIL20 to earn a share of protocol fees paid in ETH and to gain voting power over on-chain governance. The staking and governance contracts are a fork of the audited Railgun governance system (identifiers renamed, logic unchanged). See the Staking & Governance section in [contracts.md](contracts.md#staking--governance-robinhood-chain-4663).
+Yes. Staking and governance are live on Robinhood Chain at [staking.rail20.org](https://staking.rail20.org). Stake $RAIL20 to earn a share of protocol fees paid in ETH and to gain voting power over on-chain governance. See the Staking & Governance section in [contracts.md](contracts.md#staking--governance-robinhood-chain-4663).
 
 ## How are staking rewards paid?
 

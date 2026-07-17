@@ -38,7 +38,7 @@ RAIL20 runs **one dedicated pool contract per token** rather than a single share
 
 ## Staking & Governance (Robinhood Chain 4663)
 
-The RAIL20 staking and governance system is a fork of the audited [Railgun governance contracts](https://github.com/Railgun-Privacy/contract) (identifiers renamed only; logic unchanged). Stakers lock $RAIL20 to earn a share of protocol fees paid in ETH and to gain voting power over on-chain governance.
+The RAIL20 staking and governance system lets stakers lock $RAIL20 to earn a share of protocol fees paid in ETH and to gain voting power over on-chain governance.
 
 | Contract | Address | Purpose |
 |---|---|---|
