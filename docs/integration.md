@@ -6,7 +6,7 @@ How to integrate RAIL20 privacy primitives into your protocol, agent, or dApp.
 
 RAIL20 exposes these integration surfaces:
 
-1. **CLI** (`@rail20/cli`, live on npm) - the fastest path. `npm i -g @rail20/cli`, then `rail20 deposit / send / swap / bridge / recover / balance`, with `--chain base|robinhood`. Ideal for agents and scripts.
+1. **CLI** (`@rail20/cli`, live on npm) - the fastest path. `npm i -g @rail20/cli`, then `rail20 deposit / send / swap / bridge / recover / balance`, with `--chain base|robinhood|arbitrum`. Ideal for agents and scripts.
 2. **Relayer API** - submit proofs for relay so the user doesn't pay gas directly (`https://api.rail20.org`). Use this to embed RAIL20 into an existing runtime.
 3. **Direct contract calls** - shield / transact / unshield against a token pool contract.
 4. **SDK (coming soon)** - high-level TypeScript wrapper for proof generation + submission.
@@ -55,7 +55,7 @@ A neutral burner and an external solver/router network sit between the pool and 
 | Finality | Base L2 finality (~2s block time). Proofs verify on-chain in the same block. |
 | Outputs per tx | Maximum of two (recipient + change). |
 | Cross-chain settle | Bridge/swap settlement takes ~1-6 min; poll intent status until confirmed. |
-| Token support | Each supported token has its own pool per chain. Live: ETH + USDC on Base, ETH + USDG on Robinhood Chain. |
+| Token support | Each supported token has its own pool per chain. Live: ETH + USDC on Base, ETH + USDG on Robinhood Chain, ETH + USDC on Arbitrum. |
 
 ## Selective Disclosure
 

@@ -25,7 +25,7 @@ Relayer (api.rail20.org)
   │
   ├── 3. Derive keys from signature, scan pool for the user's notes
   ├── 4. Build the zk-SNARK proof (2 inputs, 2 outputs)
-  ├── 5. Submit tx to the pool's chain (Base or Robinhood; relayer pays gas)
+  ├── 5. Submit tx to the pool's chain (Base, Robinhood, or Arbitrum; relayer pays gas)
   ▼
 Token Pool (on-chain)
   │
@@ -71,8 +71,8 @@ nullifier     = Poseidon(commitment, merklePath, signature)  // signature = Pose
 
 Swap and bridge are handled in the app:
 
-- **Same-chain swap to private** - a private withdrawal funds a one-time **burner wallet**, which swaps **on-chain through Uniswap V3** (ETH ↔ USDC on Base, ETH ↔ USDG on Robinhood) in a single transaction, then re-shields the output back into the pool as fresh private notes. A neutral burner sits between the pool and the swap, so there is no on-chain link between the user's wallet and the swapped funds. (Earlier versions routed same-chain swaps through the cross-chain solver, which stalled for minutes; moving to an on-chain DEX cut this to ~30s.)
-- **Cross-chain bridge** - a private withdrawal is routed to a solver/router deposit address (NEAR Intents 1Click, or a direct Relay/Across router for Base ↔ Robinhood); it fulfills the intent cross-chain and delivers the output directly to the user's chosen recipient on the destination chain (Base ↔ Robinhood, plus Arbitrum, Ethereum, BNB Chain).
+- **Same-chain swap to private** - a private withdrawal funds a one-time **burner wallet**, which swaps **on-chain through Uniswap V3** (ETH ↔ USDC on Base, ETH ↔ USDG on Robinhood, ETH ↔ USDC on Arbitrum) in a single transaction, then re-shields the output back into the pool as fresh private notes. A neutral burner sits between the pool and the swap, so there is no on-chain link between the user's wallet and the swapped funds. (Earlier versions routed same-chain swaps through the cross-chain solver, which stalled for minutes; moving to an on-chain DEX cut this to ~30s.)
+- **Cross-chain bridge** - a private withdrawal is routed to a solver/router deposit address (NEAR Intents 1Click, or a direct Relay/Across router between pool chains); it fulfills the intent cross-chain and delivers the output directly to the user's chosen recipient on the destination chain (between pool chains Base, Robinhood, and Arbitrum, plus out to Ethereum and BNB Chain).
 
 ## Security Model
 

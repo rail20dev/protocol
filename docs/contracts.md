@@ -1,6 +1,6 @@
 # Smart Contracts
 
-Deployed on **Base** (chain ID 8453) and **Robinhood Chain** (chain ID 4663, an Arbitrum Orbit L2). Each shielded pool is its own contract per token per chain.
+Deployed on **Base** (chain ID 8453), **Robinhood Chain** (chain ID 4663, an Arbitrum Orbit L2), and **Arbitrum** (chain ID 42161). Each shielded pool is its own contract per token per chain.
 
 ## Addresses
 
@@ -18,12 +18,21 @@ Deployed on **Base** (chain ID 8453) and **Robinhood Chain** (chain ID 4663, an 
 | ETH Pool | `0xBf6a26CEF8f6251B46Cc09D03A0f12Df5972d163` | Shielded pool for native ETH on Robinhood |
 | USDG Pool | `0x04F8d8E4C3f23fE2BfB80c6C46b7d7dfE6f853F0` | Shielded pool for USDG — Global Dollar (`0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168`) |
 
+### Arbitrum (chain 42161)
+
+| Contract | Address | Purpose |
+|---|---|---|
+| ETH Pool | [`0xBf6a26CEF8f6251B46Cc09D03A0f12Df5972d163`](https://arbiscan.io/address/0xBf6a26CEF8f6251B46Cc09D03A0f12Df5972d163) | Shielded pool for native ETH on Arbitrum |
+| USDC Pool | [`0x04F8d8E4C3f23fE2BfB80c6C46b7d7dfE6f853F0`](https://arbiscan.io/address/0x04F8d8E4C3f23fE2BfB80c6C46b7d7dfE6f853F0) | Shielded pool for native USDC ([`0xaf88…5831`](https://arbiscan.io/address/0xaf88d065e77c8cC2239327C5EDb3A432268e5831), 6 decimals) |
+
+The Arbitrum pool addresses match the Robinhood Chain pool addresses because both chains were deployed from the same deployer at the same nonce, so `CREATE` produces the same address. They are independent contracts on separate chains with separate state.
+
 ### Shared
 
 | Contract | Address | Purpose |
 |---|---|---|
-| Fee recipient | [`0xd962c7a67B74EEe8D418189f7917A18577A4775d`](https://basescan.org/address/0xd962c7a67B74EEe8D418189f7917A18577A4775d) | Collects protocol fees on withdrawals (both chains) |
-| Relayer | `0x691685db9D8dB916f305Dc9fB01D23FEfA8101dA` | Broadcasts proofs on both chains |
+| Fee recipient | [`0xd962c7a67B74EEe8D418189f7917A18577A4775d`](https://basescan.org/address/0xd962c7a67B74EEe8D418189f7917A18577A4775d) | Collects protocol fees on withdrawals (all chains) |
+| Relayer | `0x691685db9D8dB916f305Dc9fB01D23FEfA8101dA` | Broadcasts proofs on all chains |
 
 RAIL20 runs **one dedicated pool contract per token** rather than a single shared vault. Each pool holds only its own asset and maintains its own commitment tree, which keeps the anonymity set per-asset and the contract surface minimal.
 
@@ -75,10 +84,11 @@ Each supported token has its own pool per chain. Currently live:
 
 - **Base:** ETH (native), USDC
 - **Robinhood Chain:** ETH (native), USDG (Global Dollar)
+- **Arbitrum:** ETH (native), USDC (native Circle)
 
 ## Relayer & Fees
 
-Withdrawals and shielded transactions are broadcast by a **relayer** so users pay no gas and their own wallet never appears as the transaction sender. The fee is a flat component plus **0.35%** of the amount, paid to the fee recipient. Flat fee per pool: `0.00025 ETH` (Base ETH), `1 USDC` (Base USDC), `0.00002 ETH` (Robinhood ETH), `0.5 USDG` (Robinhood USDG). Deposits (shielding) pay no protocol fee.
+Withdrawals and shielded transactions are broadcast by a **relayer** so users pay no gas and their own wallet never appears as the transaction sender. The fee is a flat component plus **0.35%** of the amount, paid to the fee recipient. Flat fee per pool: `0.00025 ETH` (Base ETH), `1 USDC` (Base USDC), `0.00002 ETH` (Robinhood ETH), `0.5 USDG` (Robinhood USDG), `0.00025 ETH` (Arbitrum ETH), `1 USDC` (Arbitrum USDC). Deposits (shielding) pay no protocol fee.
 
 ## Verifying Contracts
 
